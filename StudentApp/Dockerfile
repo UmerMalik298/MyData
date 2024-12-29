@@ -7,7 +7,8 @@ ENV ASPNETCORE_ENVIRONMENT=Development
 # Build image
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["StudentApp/StudentApp.csproj", "./"]
+COPY ["StudentApp/StudentApp.csproj", "StudentApp/"]
+
 RUN dotnet restore "StudentApp.csproj"
 COPY StudentApp/ ./StudentApp/
 WORKDIR "/src/StudentApp"
